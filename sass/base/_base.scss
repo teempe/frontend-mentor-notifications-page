@@ -1,0 +1,56 @@
+:root {
+    --color-blue: #0A327B;
+    --color-blue-shadow: #0A327B1A; // 10% opacity
+    --color-red: #F65552;
+    --color-very-dark-grey-blue: #1C202B;
+    --color-dark-grey-blue: #5E6778;
+    --color-grey-blue: #939CAD;
+    --color-light-grey-blue: #E5EFFA;
+    --color-very-light-grey-blue: #DDE7EE;
+    --color-snow: #F7FAFD;
+    --color-white: #FFF;
+
+    --ff-body: 'Plus Jakarta Sans', sans-serif;
+    --fw-medium: 500;
+    --fw-extra-bold: 800;
+}
+
+$bp-desktop: 46em; // 730px
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {    
+    font-family: var(--ff-body);
+    font-weight: var(--fw-medium);
+    font-size: 1.4rem;
+    background-color: var(--color-snow);
+
+    overflow-x: hidden;
+    
+    // center content on page
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+
+    @media only screen and (min-width: $bp-desktop) {
+        font-size: 1.6rem;
+    }
+}

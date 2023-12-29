@@ -5,47 +5,113 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
 
         <title>Frontend Mentor | Notifications page</title>
-
-        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-        <style>
-            .attribution { font-size: 11px; text-align: center; }
-            .attribution a { color: hsl(228, 45%, 44%); }
-        </style>
     </head>
     <body>
+        <main>
+            <article class="notifications">
+                <header class="notifications__header">
+                    <h1 class="notifications__title">Notifications <span class="notifications__badge">3</span></h1>
+                    <button class="notifications__btn">Mark all as read</button>
+                </header>
 
-        Notifications 3
+                <ul class="notifications__list">
+                    <li class="notification-card">
+                        <img src="./assets/images/avatar-mark-webber.webp" alt="User avatar" class="notification-card__img notification-card__img--avatar">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Mark Webber</a>
+                                <span>reacted to your recent post</span>
+                                <a href="#" class="notification-card__link">My first tournament today!</a>
+                            </span>
+                            <span class="notification-card__time">1m ago</span>
+                        </p>
+                    </li>
+                    
+                    <li class="notification-card">
+                        <img src="./assets/images/avatar-angela-gray.webp" alt="User avatar" class="notification-card__img notification-card__img--avatar">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name"> Angela Gray</a>
+                                <span>followed you</span>
+                            </span>
+                            <span class="notification-card__time">5m ago</span>
+                        </p>
+                    </li>
 
-        Mark all as read
+                    <li class="notification-card">
+                        <img src="./assets/images/avatar-jacob-thompson.webp" alt="User avatar" class="notification-card__img notification-card__img--avatar">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Jacob Thompson</a>
+                                <span>has joined your group</span>
+                                <a href="#" class="notification-card__link notification-card__link--group">Chess Club</a>
+                            </span>
+                            <span class="notification-card__time">1 day ago</span>
+                        </p>
+                    </li>
 
-        Mark Webber reacted to your recent post My first tournament today!
-        1m ago
+                    <li class="notification-card notification-card--read">
+                        <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="User avatar" class="notification-card__img">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Rizky Hasanuddin</a>
+                                <span>sent you a private message</span>
+                                <a href="#" class="notification-card__link notification-card__link--group">Chess Club</a>
+                            </span>
+                            <span class="notification-card__time">5 days ago</span>
+                        </p>
+                        <p class="notification-card__pvt-message">
+                            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+                            I'm already having lots of fun and improving my game.
+                        </p>
+                    </li>
 
-        Angela Gray followed you
-        5m ago
+                    <li class="notification-card notification-card--read">
+                        <img src="./assets/images/avatar-kimberly-smith.webp" alt="User avatar" class="notification-card__img">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Kimberly Smith</a>
+                                <span>commented on your picture</span>
+                                <a href="#" class="notification-card__link notification-card__link--group">Chess Club</a>
+                            </span>
+                            <span class="notification-card__time">1 week ago</span>
+                        </p>
+                        <a href="#" class="notification-card__link notification-card__link--img">
+                            <img src="./assets/images/image-chess.webp" alt="Commented image" class="notification-card__img">
+                        </a>
+                    </li>
 
-        Jacob Thompson has joined your group Chess Club
-        1 day ago
+                    <li class="notification-card notification-card--read">
+                        <img src="./assets/images/avatar-nathan-peterson.webp" alt="User avatar" class="notification-card__img notification-card__img--avatar">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Nathan Peterson</a>
+                                <span>reacted to your recent post</span>
+                                <a href="#" class="notification-card__link">5 end-game strategies to increase your win rate</a>
+                            </span>
+                            <span class="notification-card__time">2 weeks ago</span>
+                        </p>
+                    </li>
 
-        Rizky Hasanuddin sent you a private message
-        5 days ago
-        Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-        I'm already having lots of fun and improving my game.
-
-        Kimberly Smith commented on your picture
-        1 week ago
-
-        Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
-        2 weeks ago
-
-        Anna Kim left the group Chess Club
-        2 weeks ago
-
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#">Your Name Here</a>.
-        </div>
+                    <li class="notification-card notification-card--read">
+                        <img src="./assets/images/avatar-anna-kim.webp" alt="User avatar" class="notification-card__img notification-card__img--avatar">
+                        <p class="notification-card__details">
+                            <span class="notification-card__info">
+                                <a href="#" class="notification-card__link notification-card__link--name">Anna Kim</a>
+                                <span>left the group</span>
+                                <a href="#" class="notification-card__link notification-card__link--group">Chess Club</a>
+                            </span>
+                            <span class="notification-card__time">2 weeks ago</span>
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </main>
     </body>
 </html>

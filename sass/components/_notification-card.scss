@@ -1,0 +1,92 @@
+.notification-card {
+    background-color: var(--color-snow);
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas:
+        "avatar details link"
+        ". message message";
+
+    column-gap: 1.3rem;
+
+    &__img {
+        width: 3.9rem;
+
+        &--avatar {
+            grid-area: avatar;
+        }
+    }
+
+    &__details {
+        grid-area: details;
+
+        color: var(--color-dark-grey-blue);
+
+        & .notification-card__info::after {
+            content: "";
+            display: inline-block;
+            margin-left: 0.6rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            background-color: var(--color-red);
+        }
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        font-weight: var(--fw-extra-bold);
+        transform: color 0.25s ease-out;
+
+        &--name {
+            color: var(--color-very-dark-grey-blue);
+        }
+
+        &--group {
+            color: var(--color-blue);
+        }
+
+        &--img {
+            grid-area: link;
+        }
+
+        &:hover, &:active {
+            color: var(--color-blue);
+        }
+    }
+
+    &__time {
+        display: block;
+        color: var(--color-grey-blue);
+        margin-top: 0.3rem;
+    }
+    
+    &__pvt-message {
+        grid-area: message;
+
+        color: var(--color-dark-grey-blue);
+        border: 1px solid var(--color-very-light-grey-blue);
+        border-radius: 0.5rem;
+        padding: 1.6rem;
+        margin-top: 1.2rem;
+
+        cursor: pointer;
+
+        &:active, &:hover {
+            background-color: var(--color-light-grey-blue);
+        }
+    }
+
+    &--read {
+        background-color: transparent;
+
+        & .notification-card__info::after {
+            display: none;
+        }
+    }
+}

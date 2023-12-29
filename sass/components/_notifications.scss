@@ -1,0 +1,65 @@
+.notifications {
+    background-color: var(--color-white);
+    
+    width: clamp(37.5rem, 100vw, 73rem);
+    padding: clamp(2.4rem, 6vw, 3.3rem) clamp(1.6rem, 4vw, 3rem);
+    
+    &__header {
+        margin-bottom: 2.4rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: var(--fw-extra-bold);
+        color: var(--color-very-dark-grey-blue);
+
+        display: flex;
+        align-items: center;
+        column-gap: 0.8rem;
+    }
+
+    &__badge {
+        font-size: 1.6rem;
+        color: var(--color-white);
+
+        background-color: var(--color-blue);
+        border-radius: 0.6rem;
+        padding: 0.2rem 1.1rem;
+    }
+
+    &__btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: var(--color-dark-grey-blue);
+        transition: color 0.25s ease-out;
+
+        &:hover, &:active, &:focus {
+            color: var(--color-blue);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    @media only screen and (min-width: $bp-desktop) {
+        border-radius: 1.5rem;
+        box-shadow: 0rem 2rem 6rem 0rem var(--color-blue-shadow);
+
+        &__header {
+            margin-bottom: 3.1rem;
+        }
+
+        &__title {
+            font-size: 2.4rem;
+        }
+    }
+}
