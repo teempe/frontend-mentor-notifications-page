@@ -1,0 +1,179 @@
+:root {
+  --color-blue: #0A327B;
+  --color-blue-shadow: #0A327B1A;
+  --color-red: #F65552;
+  --color-very-dark-grey-blue: #1C202B;
+  --color-dark-grey-blue: #5E6778;
+  --color-grey-blue: #939CAD;
+  --color-light-grey-blue: #E5EFFA;
+  --color-very-light-grey-blue: #DDE7EE;
+  --color-snow: #F7FAFD;
+  --color-white: #FFF;
+  --ff-body: "Plus Jakarta Sans", sans-serif;
+  --fw-medium: 500;
+  --fw-extra-bold: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-medium);
+  font-size: 1.4rem;
+  background-color: var(--color-snow);
+  overflow-x: hidden;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+@media only screen and (min-width: 46em) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+.notifications {
+  background-color: var(--color-white);
+  width: clamp(37.5rem, 100vw, 73rem);
+  padding: clamp(2.4rem, 6vw, 3.3rem) clamp(1.6rem, 4vw, 3rem);
+}
+.notifications__header {
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notifications__title {
+  font-size: 2rem;
+  font-weight: var(--fw-extra-bold);
+  color: var(--color-very-dark-grey-blue);
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+.notifications__badge {
+  font-size: 1.6rem;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 0.6rem;
+  padding: 0.2rem 1.1rem;
+}
+.notifications__btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-dark-grey-blue);
+  transition: color 0.25s ease-out;
+}
+.notifications__btn:hover, .notifications__btn:active, .notifications__btn:focus {
+  color: var(--color-blue);
+}
+.notifications__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media only screen and (min-width: 46em) {
+  .notifications {
+    border-radius: 1.5rem;
+    box-shadow: 0rem 2rem 6rem 0rem var(--color-blue-shadow);
+  }
+  .notifications__header {
+    margin-bottom: 3.1rem;
+  }
+  .notifications__title {
+    font-size: 2.4rem;
+  }
+}
+
+.notification-card {
+  background-color: var(--color-snow);
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "avatar details link" ". message message";
+  column-gap: 1.3rem;
+}
+.notification-card__img {
+  width: 3.9rem;
+}
+.notification-card__img--avatar {
+  grid-area: avatar;
+}
+.notification-card__details {
+  grid-area: details;
+  color: var(--color-dark-grey-blue);
+}
+.notification-card__details .notification-card__info::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--color-red);
+}
+.notification-card__link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--fw-extra-bold);
+  transform: color 0.25s ease-out;
+}
+.notification-card__link--name {
+  color: var(--color-very-dark-grey-blue);
+}
+.notification-card__link--group {
+  color: var(--color-blue);
+}
+.notification-card__link--img {
+  grid-area: link;
+}
+.notification-card__link:hover, .notification-card__link:active {
+  color: var(--color-blue);
+}
+.notification-card__time {
+  display: block;
+  color: var(--color-grey-blue);
+  margin-top: 0.3rem;
+}
+.notification-card__pvt-message {
+  grid-area: message;
+  color: var(--color-dark-grey-blue);
+  border: 1px solid var(--color-very-light-grey-blue);
+  border-radius: 0.5rem;
+  padding: 1.6rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+}
+.notification-card__pvt-message:active, .notification-card__pvt-message:hover {
+  background-color: var(--color-light-grey-blue);
+}
+.notification-card--read {
+  background-color: transparent;
+}
+.notification-card--read .notification-card__info::after {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
